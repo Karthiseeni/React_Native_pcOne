@@ -1,4 +1,5 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TextInput } from 'react-native'
+import { PrimaryBtn } from '../common/Button'
 import Logo from '../components/Logo'
 
 const styles = StyleSheet.create({
@@ -43,6 +44,8 @@ function Login(props) {
                 placeholder="Registered mobile Number"
                 placeholderTextColor="#808080"
                 autoCapitalize="none"
+                defaultValue='987456312'
+                keyboardType='numeric'   
             />
             <TextInput style={styles.input}
                 placeholder="Password"
@@ -50,12 +53,11 @@ function Login(props) {
                 autoCapitalize="none"
             />
             <Text style={styles.forgotPassword}>Forgot Password?</Text>
-            <TouchableOpacity
-                style={styles.submitButton}
-                onPress={() => props.setScreenNav('otp')}
-            >
-                <Text style={styles.submitButtonText}> Request OTP </Text>
-            </TouchableOpacity>
+            <PrimaryBtn
+                nxtScreen='otp'
+                setScreenNav={props.setScreenNav}
+                name={'Request OTP'}
+            />
         </Logo>
     )
 }
