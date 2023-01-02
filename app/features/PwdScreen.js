@@ -1,40 +1,31 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput } from 'react-native'
+import { TextInput } from 'react-native'
 import { BackBtn, PrimaryBtn } from '../common/Button'
 import Logo from '../components/Logo'
+import { LoginScreenStyles } from '../assets/styles/IntialScreen'
 
-const styles = StyleSheet.create({
-    input: {
-        margin: 15,
-        width: 310,
-        height: 50,
-        borderColor: '#d3d3d3',
-        borderWidth: 1,
-        borderRadius: 5,
-        paddingLeft: 15,
-    },
-})
+function PwdScreen({ navigation }) {
 
-function PwdScreen(props) {
+    const handleSubmit = () => {
+        navigation.navigate('Otp')
+    }
+
     return (
         <Logo>
-            <BackBtn
-                preScreen='otp'
-                setScreenNav={props.setScreenNav} />
-            <TextInput style={styles.input}
+            <BackBtn onPress={() => navigation.goBack()} />
+            <TextInput style={LoginScreenStyles.input}
                 placeholder="New Password"
                 placeholderTextColor="#808080"
-                autoCapitalize="none"    
+                autoCapitalize="none"
             />
-            <TextInput style={styles.input}
+            <TextInput style={LoginScreenStyles.input}
                 placeholder="Confirm New Password"
                 placeholderTextColor="#808080"
                 autoCapitalize="none"
             />
             <PrimaryBtn
-                nxtScreen='otp'
-                setScreenNav={props.setScreenNav}
-                name={'Confirm Password'}
+                onPress={handleSubmit}
+                name={'Verify OTP & Create New Password'}
             />
         </Logo>
     )

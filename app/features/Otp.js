@@ -1,39 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { BackBtn, PrimaryBtn } from '../common/Button'
 import Logo from '../components/Logo'
 import OTPTextInput from 'react-native-otp-textinput'
+import { OtpScreenStyles } from '../assets/styles/IntialScreen'
+import { useSelector } from 'react-redux'
 
-const styles = StyleSheet.create({
-    OtpTitle: {
-        fontSize: 18,
-        textAlign: 'center',
-        marginBottom: 20,
-        fontWeight: 'bold',
-    },
-    OtpContainer: {
-        padding: 0,
-        margin: 0,
-        width: '80%',
-        marginLeft: "9%"
-    },
-    roundedTextInput: {
-        borderColor: 'red',
-        borderRadius: 5,
-        borderWidth: 3,
-        padding: 5,
-        margin: 0,
-        width: '13%',
-        height: '100%'
-    },
-    OtpDesc: {
-        fontSize: 14,
-        textAlign: 'center',
-        margin: 20
-    },
-})
+function Otp({ navigation }) {
 
-function Otp(props) {
+    const { mobileNumber } = useSelector(state => {
+        console.log(state.userReducer)
+        return state.userReducer
+    })
+
+
     const [minutes, setMinutes] = useState(4);
     const [seconds, setSeconds] = useState(30);
 
@@ -57,24 +37,26 @@ function Otp(props) {
         };
     }, [seconds]);
 
+    const handleSubmit = () => {
+        navigation.navigate('PwdScreen')
+    }
+
     return (
         <Logo>
-            <BackBtn preScreen='login' setScreenNav={props.setScreenNav} />
-            <Text style={styles.OtpTitle}>Enter the OTP received on {'\n'}  your mobile</Text>
+            <BackBtn onPress={() => navigation.goBack()} />
+            <Text style={OtpScreenStyles.OtpTitle}>Enter the OTP received on {'\n'} +91 {mobileNumber}</Text>
             <View
-                style={styles.OtpContainer}
+                style={OtpScreenStyles.OtpContainer}
             >
                 <OTPTextInput
                     inputCount={6}
-                    textInputStyle={styles.roundedTextInput}
+                    textInputStyle={OtpScreenStyles.roundedTextInput}
                     tintColor={'#1C86EE'}
                 />
             </View>
-            <Text style={styles.OtpDesc}>Resend OTP in {minutes < 10 ? `0${minutes}` : minutes}:
-                {seconds < 10 ? `0${seconds}` : seconds}</Text>
+            <Text style={OtpScreenStyles.OtpDesc}>Resend OTP in {minutes < 10 ? `0${minutes}` : minutes}: {seconds < 10 ? `0${seconds}` : seconds}</Text>
             <PrimaryBtn
-                nxtScreen='pwdScreen'
-                setScreenNav={props.setScreenNav}
+                onPress={handleSubmit}
                 name={'Verify OTP & Create New Password'}
             />
         </Logo>

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 export function BackBtn(props) {
     return (
         <View>
-            <TouchableOpacity onPress={() => props.setScreenNav(props.preScreen)} style={styles.container}>
+            <TouchableOpacity onPress={props.onPress} style={styles.container}>
                 <Image source={require('../assets/images/back_arrow.png')} style={styles.image} />
             </TouchableOpacity>
         </View>
@@ -40,7 +40,7 @@ export const PrimaryBtn = (props) => {
     return (
         <TouchableOpacity
             style={styles.primaryBtn}
-            onPress={() => props.setScreenNav(props.nxtScreen)}
+            onPress={props.onPress}
         >
             <Text style={styles.primaryBtnText}>{props.name} </Text>
         </TouchableOpacity>
