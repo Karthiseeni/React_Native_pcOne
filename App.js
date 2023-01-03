@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Login from './app/features/Login';
 import Otp from './app/features/Otp';
 import PwdScreen from './app/features/PwdScreen';

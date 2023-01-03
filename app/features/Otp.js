@@ -8,11 +8,7 @@ import { useSelector } from 'react-redux'
 
 function Otp({ navigation }) {
 
-    const { mobileNumber } = useSelector(state => {
-        console.log(state.userReducer)
-        return state.userReducer
-    })
-
+    const { mobileNumber } = useSelector(state => state.userReducer)
 
     const [minutes, setMinutes] = useState(4);
     const [seconds, setSeconds] = useState(30);

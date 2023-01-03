@@ -19,6 +19,21 @@ export const LoginScreenStyles = StyleSheet.create({
         width: '100%',
         textAlign: 'right'
     },
+    pwdHeading: {
+        fontWeight: 'bold',
+    },
+    pwdList: {
+        marginTop: 10,
+        marginLeft: 20
+    },
+    pwdButtlet: {
+        marginRight: 550
+    },
+    pwdChecked: {
+        color: 'green',
+        marginTop: 10,
+        marginLeft: 20
+    }
 })
 
 export const OtpScreenStyles = StyleSheet.create({
