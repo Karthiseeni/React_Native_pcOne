@@ -15,7 +15,7 @@ function PwdScreen({ navigation }) {
     const [isSpecialChar, setIsSpecialChar] = useState(false)
 
     const handleSubmit = () => {
-        navigation.navigate('Otp')
+        navigation.navigate('PartSelection')
     }
 
     const PasswordStrengthCheck = (pass) => {

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 
 export function BackBtn(props) {
     return (
-        <View>
+        <View {...props}>
             <TouchableOpacity onPress={props.onPress} style={styles.container}>
                 <Image source={require('../assets/images/back_arrow.png')} style={styles.image} />
             </TouchableOpacity>
