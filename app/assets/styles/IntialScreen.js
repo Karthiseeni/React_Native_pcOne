@@ -77,7 +77,6 @@ export const dropDownStyles = StyleSheet.create({
         borderWidth: 0.5,
         borderRadius: 8,
         paddingHorizontal: 8,
-        marginTop: 0,
     },
     icon: {
         marginRight: 5,

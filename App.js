@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { Store } from './app/redux/store';
 import PartSelection from './app/features/PartSelection';
 import LaunguageSelection from './app/features/LaunguageSelection';
+import DeviceCapable from './app/features/DeviceCapable';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,9 +22,10 @@ function App() {
           <Stack.Screen options={{ headerShown: false }} name="PwdScreen" component={PwdScreen} />
           <Stack.Screen options={{ headerShown: false }} name="PartSelection" component={PartSelection} />
           <Stack.Screen options={{ headerShown: false }} name="LaunguageSelection" component={LaunguageSelection} />
+          <Stack.Screen options={{ headerShown: false }} name="DeviceCapable" component={DeviceCapable} />
         </Stack.Navigator>
       </NavigationContainer>
-    </Provider>
+    </Provider >
   )
 }
 

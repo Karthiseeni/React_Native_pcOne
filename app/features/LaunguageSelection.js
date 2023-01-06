@@ -18,18 +18,15 @@ function LaunguageSelection({ navigation }) {
     ];
 
     const dropDownData = [
-        { label: 'Part 1', value: '1' },
-        { label: 'Part 2', value: '2' },
-        { label: 'Part 3', value: '3' },
-        { label: 'Part 4', value: '4' },
-        { label: 'Part 5', value: '5' },
-        { label: 'Part 6', value: '6' },
-        { label: 'Part 7', value: '7' },
-        { label: 'Part 8', value: '8' },
+        { label: 'English', value: '1' },
+        { label: 'Hindi', value: '2' },
+        { label: 'Telugu', value: '3' },
+        { label: 'Malayalam', value: '4' },
+        { label: 'Kanada', value: '5' },
     ];
 
     const handleSubmit = () => {
-        navigation.navigate('LaunguageSelection')
+        navigation.navigate('DeviceCapable')
     }
 
     return (

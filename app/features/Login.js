@@ -4,6 +4,7 @@ import Logo from '../components/Logo'
 import { LoginScreenStyles } from '../assets/styles/IntialScreen'
 import { useDispatch, useSelector } from 'react-redux'
 import { setMobileNumber } from '../redux/action'
+import { useState } from 'react'
 
 function Login({ navigation }) {
 
