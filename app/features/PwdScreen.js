@@ -15,7 +15,10 @@ function PwdScreen({ navigation }) {
     const [isSpecialChar, setIsSpecialChar] = useState(false)
 
     const handleSubmit = () => {
-        navigation.navigate('PartSelection')
+        navigation.reset({
+            index: 0,
+            routes: [{ name: 'PartSelection' }],
+        });
     }
 
     const PasswordStrengthCheck = (pass) => {

@@ -3,12 +3,22 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        width: 24,
+        width: 50,
         height: 24,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     image: {
-        width: 24,
-        height: 24,
+        width: 22,
+        height: 22,
+    },
+    title: {
+        color: 'black',
+        fontSize: 16,
+        marginLeft: 2,
+        fontWeight: '500'
     },
     primaryBtn: {
         backgroundColor: '#1C86EE',
@@ -30,7 +40,7 @@ export function BackBtn(props) {
     return (
         <View {...props}>
             <TouchableOpacity onPress={props.onPress} style={styles.container}>
-                <Image source={require('../assets/images/back_arrow.png')} style={styles.image} />
+                <Image source={require('../assets/images/back_arrow.png')} style={styles.image} /><Text style={styles.title}>Back</Text>
             </TouchableOpacity>
         </View>
     )
@@ -38,10 +48,7 @@ export function BackBtn(props) {
 
 export const PrimaryBtn = (props) => {
     return (
-        <TouchableOpacity
-            style={styles.primaryBtn}
-            onPress={props.onPress}
-        >
+        <TouchableOpacity style={styles.primaryBtn} {...props}>
             <Text style={styles.primaryBtnText}>{props.name} </Text>
         </TouchableOpacity>
     )
